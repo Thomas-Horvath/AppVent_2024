@@ -1,0 +1,47 @@
+/** Fonts */
+@font-face {
+    font-family: 'text';
+    src: url(../fonts/OpenSans-Light.ttf);
+}
+
+@font-face {
+    font-family: 'text-bold';
+    font-weight: bold;
+    src: url(../fonts/OpenSans-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: "title";
+    src: url(../fonts/Bitter-ExtraBold.ttf);
+}
+
+
+/** reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/** default styles */
+html, body {
+    height: 100%;
+    -webkit-tap-highlight-color: transparent;   /** érintő képernyőnél linkeknél a háttér felvillanás ellen!!*/
+}
+
+body {
+font-family: "text", sans-serif;
+font-size: 16px;   /** alapértelmezett betűmért*/
+line-height: 1.5;  /** alap sortávolság*/
+}
+
+h1, h2, h3, h4 {
+    font-family: "title", sans-serif;
+}
+
+img {
+    max-width:100% ;
+}
