@@ -15,6 +15,11 @@
     src: url(../fonts/Bitter-ExtraBold.ttf);
 }
 
+:root {
+    --grey: #999;
+    --white: #fff;
+}
+
 
 /** reset */
 
@@ -27,21 +32,105 @@
 }
 
 /** default styles */
-html, body {
+html,
+body {
     height: 100%;
-    -webkit-tap-highlight-color: transparent;   /** érintő képernyőnél linkeknél a háttér felvillanás ellen!!*/
+    -webkit-tap-highlight-color: transparent;
+    /** érintő képernyőnél linkeknél a háttér felvillanás ellen!!*/
 }
 
 body {
-font-family: "text", sans-serif;
-font-size: 16px;   /** alapértelmezett betűmért*/
-line-height: 1.5;  /** alap sortávolság*/
+    font-family: "text", sans-serif;
+    font-size: 16px;
+    /** alapértelmezett betűmért*/
+    line-height: 1.5;
+    /** alap sortávolság*/
+    background: #eee;
 }
 
-h1, h2, h3, h4 {
+
+/** Default texts' styles */
+h1,
+h2,
+h3,
+h4 {
     font-family: "title", sans-serif;
 }
 
+a {
+    text-decoration: none;
+    color: orange;
+}
+
+a:hover {
+    color: orangered;
+}
+
+
+/** Default Images*/
 img {
-    max-width:100% ;
+    max-width: 100%;
+}
+
+
+
+
+
+/** Layout  --------------------------- */
+
+header {
+    background: var(--grey);
+    color: var(--white);
+    padding: 10px;
+
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+main {
+    margin: auto;
+    margin-top: 75px;
+    min-height: 900px;
+    padding: 25px;
+    max-width: 750px;
+}
+
+main>section {
+    background: var(--white);
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+aside {
+    background: #ddd;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+aside ul {
+    list-style: none;
+    display: flex;
+    margin: auto;
+    max-width: 750px;
+}
+
+aside li {
+    width: 25%;
+    text-align: center;
+}
+
+aside ul a {
+    color: #666;
+    font-size: 175%;
+    display: block;
+    padding: 25px 0;
+    height: 120px;
+}
+
+aside ul a:hover {
+    background: #ccc;
 }
