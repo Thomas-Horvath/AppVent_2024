@@ -15,7 +15,9 @@
     src: url(../fonts/Bitter-ExtraBold.ttf);
 }
 
+/** Változók*/
 :root {
+    --bg: #f0f2f0;
     --grey: #999;
     --white: #fff;
 }
@@ -45,8 +47,11 @@ body {
     /** alapértelmezett betűmért*/
     line-height: 1.5;
     /** alap sortávolság*/
-    background: #eee;
+    background: var(--bg);
 }
+
+
+
 
 
 /** Default texts' styles */
@@ -78,26 +83,56 @@ img {
 
 /** Layout  --------------------------- */
 
+body::before {
+    display: block;
+    content: "";
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/header.svg');
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+
+@media screen and (min-width: 600px) {
+
+    body::before,
+    header {
+        background-size: 100%;
+    }
+}
+
 header {
-    background: var(--grey);
+    background-image: url('../img/header.svg');
+    background-repeat: no-repeat;
+    background-position: top center;
     color: var(--white);
     padding: 10px;
-
     position: fixed;
     left: 0;
     right: 0;
     top: 0;
+    height: 120px;
+    z-index: 1;
 }
 
 main {
-    margin: auto;
+    position: absolute;
+    width: 100%;
     margin-top: 75px;
     min-height: 900px;
     padding: 25px;
+}
+
+.container {
+    margin: auto;
     max-width: 750px;
 }
 
-main>section {
+main .container>section {
     background: var(--white);
     padding: 25px;
     margin-bottom: 25px;
@@ -114,8 +149,6 @@ aside {
 aside ul {
     list-style: none;
     display: flex;
-    margin: auto;
-    max-width: 750px;
 }
 
 aside li {
