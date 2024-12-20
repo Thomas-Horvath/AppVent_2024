@@ -52,6 +52,7 @@ body {
     line-height: 1.5;
     /** alap sortávolság*/
     background: var(--bg);
+    min-width: 350px;
 }
 
 
@@ -113,6 +114,8 @@ body::before {
     }
 }
 
+
+/* * Header */
 header {
     background-image: url('../img/header.svg');
     background-repeat: no-repeat;
@@ -148,6 +151,9 @@ header .menu {
     cursor: pointer;
 }
 
+
+
+/** Main section  */
 main {
     position: absolute;
     width: 100%;
@@ -203,6 +209,11 @@ main .container>section {
     }
 }
 
+
+
+
+
+/** Footer links  */
 aside {
     position: fixed;
     left: 0;
@@ -221,6 +232,7 @@ aside nav {
 aside ul {
     list-style: none;
     display: flex;
+    padding: 0 24px;
 }
 
 aside li {
@@ -228,15 +240,91 @@ aside li {
     text-align: center;
 }
 
+aside li.more {
+    display: none;
+}
+
 aside ul a {
     color: var(--aside-link-color);
-    font-size: 150%;
     display: block;
     padding-top: 28px;
     height: 120px;
     transition: .3s;
 }
 
+aside ul a i {
+    font-size: 150%;
+}
+
 aside ul a:hover {
     background: rgba(5, 60, 50, .033);
+}
+
+aside li a span {
+    display: none;
+}
+
+@media screen and (min-width: 560px) {
+    aside li a span {
+        display: inline-block;
+        margin-left: 8px;
+        color: var(--link-color);
+        opacity: .66;
+        transform: translateY(-2px);
+    }
+}
+
+
+/** left side menu  */
+@media screen and (min-width: 960px) {
+    main {
+        padding-left: 208px;
+    }
+
+    aside {
+        height: 100%;
+        max-width: 180px;
+        background-image: none;
+        z-index: 1;
+        padding-top: 120px;
+    }
+
+    aside nav {
+        height: 100%;
+        border-top-left-radius: 0;
+        padding-top: 40px;
+    }
+
+    aside ul {
+        flex-direction: column;
+        padding: 0;
+
+    }
+
+    aside li {
+        width: auto;
+        text-align: left;
+    }
+
+    aside li.more {
+        display: initial;
+    }
+
+    aside li.separate::before {
+        content: "";
+        display: block;
+        margin: 8px 24px;
+        opacity: .25;
+        border-top: 1px solid var(--link-color);
+    }
+
+    aside li a {
+        padding: 16px 24px;
+        height: auto;
+    }
+
+    aside li a i {
+        width: 24px;
+        text-align: center;
+    }
 }
