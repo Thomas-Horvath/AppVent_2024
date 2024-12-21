@@ -29,13 +29,13 @@
                     <li><a href="">Kezdőlap</a></li>
                     <li class="separate">
                         <a href="">
-                               <i class="fa-solid fa-gear"></i>
+                            <i class="fa-solid fa-gear"></i>
                             <span>Beállítások</span>
                         </a>
                     </li>
                     <li class="more">
                         <a href="">
-                               <i class="fa-solid fa-plus-circle"></i>
+                            <i class="fa-solid fa-plus-circle"></i>
                             <span>Továbbiak</span>
                         </a>
                     </li>
@@ -162,6 +162,15 @@
             </ul>
         </nav>
     </aside>
+
+    <script>
+
+        let nav = document.querySelector('header nav');
+        nav.addEventListener('click', () => {
+            nav.classList.toggle('visible')
+        });
+
+    </script>
 </body>
 
 </html>

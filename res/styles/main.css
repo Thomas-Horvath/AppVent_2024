@@ -143,6 +143,14 @@ header>div {
     width: 140px;
 }
 
+nav li.separate::before {
+    content: "";
+    display: block;
+    margin: 8px 24px;
+    opacity: .25;
+    border-top: 1px solid var(--link-color);
+}
+
 
 /** header navigation menu*/
 header .menu {
@@ -171,9 +179,18 @@ header nav li.more {
     display: none;
 }
 
+header li.separate::before {
+    display: none;
+}
+
+
+
+
 @media screen and (max-width: 880px) {
 
     /**  Font aweswome hamburger icon css leképzése  --   FONTOS!!!! */
+
+    /** nem látható állapota a navnak*/
     header nav::before {
         font-weight: 900;
         font-family: "Font Awesome 6 Free";
@@ -181,6 +198,9 @@ header nav li.more {
         font-size: 200%;
         opacity: .75;
         cursor: pointer;
+        position: fixed;
+        right: 32px;
+        top: 42px;
     }
 
     header nav:hover::before {
@@ -188,8 +208,68 @@ header nav li.more {
     }
 
     header nav ul {
+     opacity: 0;
+     max-width: 0;
+     overflow-x: hidden;
+     transition: .5s;
+    }
+
+
+
+
+
+    /** Látható állapota a navnak*/
+    header nav.visible {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .75);
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    header nav.visible::before {
         display: none;
     }
+
+    header nav.visible ul {
+        display: block;
+        padding-top: 32px;
+        height: 100%;
+        background-color: var(--white);
+        max-width: 320px;
+        transform: none;
+        opacity: 1;
+    }
+
+    header nav a {
+        color: var(--link-color);
+        border-radius: 0;
+        padding: 16px 24px;
+        text-transform: uppercase;
+        font-size: 90%;
+    }
+
+    header nav a:hover {
+        background: rgba(5, 60, 50, .033);
+    }
+
+    header nav a span,
+    header nav li.more {
+        display: initial;
+    }
+
+    header nav a span {
+        margin-left: 4px;
+    }
+
+    header li.separate::before {
+        display: block;
+    }
+
+
 }
 
 
@@ -254,7 +334,7 @@ main .container>section {
 
 
 
-/** Footer links  */
+/** aside menu  */
 aside {
     position: fixed;
     left: 0;
@@ -305,6 +385,8 @@ aside li a span {
     display: none;
 }
 
+
+
 @media screen and (min-width: 560px) {
     aside li a span {
         display: inline-block;
@@ -351,13 +433,7 @@ aside li a span {
         display: initial;
     }
 
-    aside li.separate::before {
-        content: "";
-        display: block;
-        margin: 8px 24px;
-        opacity: .25;
-        border-top: 1px solid var(--link-color);
-    }
+
 
     aside li a {
         padding: 16px 24px;
