@@ -1,3 +1,8 @@
-import  { NavBar } from "./components/nav-bar.js";
+import "./components/nav-bar.js";
 
-NavBar();
+function NavClick(href) {
+    console.log(`NavClick: ${href}`)
+}
+
+let navbar  = document.querySelector('nav-bar');
+navbar.onLinkClick = NavClick;
