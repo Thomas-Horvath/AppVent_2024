@@ -1,5 +1,5 @@
 class NavBar extends HTMLElement {
-    onLinkClick = (() => {});
+    onLinkClick = (() => { });
 
     connectedCallback() {
         let links = this.querySelectorAll('a');
@@ -23,11 +23,13 @@ class NavBar extends HTMLElement {
     };
 
     #setupEvents(links) {
-        let nav = this.children[0];
-        nav.addEventListener('click', () => {
-            nav.classList.toggle('visible')
-        });
-
+        if (this.getAttribute('mobilemenu') !== null) {
+            let nav = this.children[0];
+            nav.addEventListener('click', () => {
+                nav.classList.toggle('visible')
+            });
+        }
+        
         for (let a of links) {
             a.onclick = (e) => {
                 e.preventDefault();
