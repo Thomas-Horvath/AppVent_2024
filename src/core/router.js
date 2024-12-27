@@ -2,18 +2,20 @@
 class Router {
     defaultPath = '';
     pathDelimiter = '';
+    defaultMethod = '';
 
     routes = {};
 
     constructor(config) {
         this.defaultPath = config.defaultPath;
         this.pathDelimiter = config.pathDelimiter;
+        this.defaultMethod = config.defaultMethod;
 
         window.addEventListener('popstate', () => this.manage())  // a visszanyil kattintásra ugrik egyet vissza
     }
 
-    register(path, method) {
-        this.routes[path] = method;
+    register(path, classRef) {
+        this.routes[path] = classRef;
         return this;
     }
 
@@ -27,7 +29,8 @@ class Router {
 
     manage() {
         let path = this.#getPath();
-        this.routes[path]();
+        let instance = new this.routes[path]();
+        instance[this.defaultMethod]();
     }
  
 

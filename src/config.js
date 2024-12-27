@@ -1,4 +1,5 @@
 export default {
     defaultPath : 'home',
-    pathDelimiter: '#'
+    pathDelimiter: '#',
+    defaultMethod: 'main'
 }
