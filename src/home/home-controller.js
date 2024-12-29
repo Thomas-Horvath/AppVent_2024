@@ -2,11 +2,12 @@
 import DiTarget from "../core/di-target.js";
 import HomeService from "./home-service.js";
 import HomeView from "./home-view.js";
+import SecondView from "./second-view.js";
 
 
 class HomeController extends DiTarget {
-    static requires = {service: HomeService, view: HomeView};
- 
+    static requires = { service: HomeService, view: HomeView, sview: SecondView };
+
 
 
     main() {
@@ -14,7 +15,8 @@ class HomeController extends DiTarget {
         this.view.render(model);
     }
     lists(arg) {
-        console.log('Home Lists..', arg);
+        this.sview.render(arg)
+            .onCustomClick((data) => { console.log('Custom click ...', data) })
     }
     ideas() {
         console.log('Home Ideas..');

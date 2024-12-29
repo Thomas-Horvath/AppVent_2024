@@ -208,10 +208,10 @@ header li.separate::before {
     }
 
     header nav ul {
-     opacity: 0;
-     max-width: 0;
-     overflow-x: hidden;
-     transition: .5s;
+        opacity: 0;
+        max-width: 0;
+        overflow-x: hidden;
+        transition: .5s;
     }
 
 
@@ -287,12 +287,27 @@ main {
     margin: auto;
 }
 
+@keyframes Section {
+    0% {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 main .container>section {
     background: var(--white);
     padding: 42px;
     margin-bottom: 32px;
     border-radius: 42px;
     box-shadow: 0 50px 35px -50px rgba(5, 60, 50, .5);
+    animation-name: Section;
+    animation-duration: .6s;
+    animation-iteration-count: 1;
 }
 
 @media screen and (min-width: 640px) {
