@@ -16,7 +16,9 @@ class HomeController extends DiTarget {
     }
     lists(arg) {
         this.sview.render(arg)
-            .onCustomClick((data) => { console.log('Custom click ...', data) })
+            .onCustomClick((data) => {
+                document.querySelector('popup-box').open();
+            })
     }
     ideas() {
         console.log('Home Ideas..');
