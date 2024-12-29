@@ -11,9 +11,9 @@ import FamilyController from "./family/family-controller.js";
 
 let router = new Router(config);
 
-router.register('lists', () => { console.log('Lists..') })
+router.register('lists', HomeController, 'lists')
     .register('family', FamilyController )
-    .register('ideas', () => { console.log('Ideas..') })
+    .register('ideas', HomeController, 'ideas')
     .register('home', HomeController )
     .manage();
 

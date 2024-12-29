@@ -14,8 +14,11 @@ class Router {
         window.addEventListener('popstate', () => this.manage())  // a visszanyil kattintásra ugrik egyet vissza
     }
 
-    register(path, classRef) {
-        this.routes[path] = classRef;
+    register(path, classRef, action) {
+        this.routes[path] = {
+            controller: classRef,
+            action: action || this.defaultMethod
+        };
         return this;
     }
 
@@ -29,16 +32,19 @@ class Router {
 
     manage() {
         let path = this.#getPath();
-        let instance = new this.routes[path]();
-        instance[this.defaultMethod]();
+        
+        let registry = this.routes[path[0]];
+        let controller = registry.controller
+        let instance = new controller();
+        instance[registry.action](path.length > 1 ? path[1] : undefined);
     }
- 
+
 
     #getPath() {
-        let path =  location.search || location.hash || location.pathname;
+        let path = location.search || location.hash || location.pathname;
         path = path.substring(1);
         if (!path || path === 'index.html') path = this.defaultPath;
-        return path;
+        return path.split('/');
     }
 }
 
