@@ -1,4 +1,4 @@
-import { getInstance } from "../core/core.js";
+
 import DiTarget from "../core/di-target.js";
 import HomeService from "./home-service.js";
 import HomeView from "./home-view.js";
@@ -10,7 +10,8 @@ class HomeController extends DiTarget {
 
 
     main() {
-        this.view.showData(this.service.getData());
+        let model = this.service.getData();
+        this.view.render(model);
     }
     lists(arg) {
         console.log('Home Lists..', arg);

@@ -16,6 +16,11 @@ export function getInstance(classRef) {
             }
             instances[key].inject(injection);
         }
+
+        if(instances[key].init) {
+            instances[key].init();
+        }
+
     }
     return instances[key];
 
