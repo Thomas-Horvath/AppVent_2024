@@ -3,13 +3,13 @@ import Router from './core/router.js';
 import config from './config.js';
 import HomeController from './home/home-controller.js';
 import FamilyController from "./family/family-controller.js";
-
+import { getInstance } from "./core/core.js";
 
 
 
 // router
 
-let router = new Router(config);
+let router = getInstance(Router);
 
 router.register('lists', HomeController, 'lists')
     .register('family', FamilyController )

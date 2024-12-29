@@ -1,3 +1,4 @@
+import { getInstance } from "./core.js";
 
 class Router {
     defaultPath = '';
@@ -35,7 +36,7 @@ class Router {
         
         let registry = this.routes[path[0]];
         let controller = registry.controller
-        let instance = new controller();
+        let instance = getInstance(controller);
         instance[registry.action](path.length > 1 ? path[1] : undefined);
     }
 
