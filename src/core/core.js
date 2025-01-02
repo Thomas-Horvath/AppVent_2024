@@ -11,17 +11,23 @@ export function getInstance(classRef) {
         instances[key] = new classRef(config);
         if (instances[key] instanceof DiTarget) {
             let injection = {};
-            for(let x in classRef.requires) {
+            for (let x in classRef.requires) {
                 injection[x] = getInstance(classRef.requires[x]);
             }
             instances[key].inject(injection);
         }
 
-        if(instances[key].init) {
+        if (instances[key].init) {
             instances[key].init();
         }
 
     }
     return instances[key];
 
+}
+
+
+export function registerInstance(instance) {
+    let key = instance.constructor.name;
+    instances[key] = instance;
 }

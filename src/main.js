@@ -3,7 +3,8 @@ import "./components/popup-box.js";
 import Router from './core/router.js';
 import HomeController from './home/home-controller.js';
 import FamilyController from "./family/family-controller.js";
-import { getInstance } from "./core/core.js";
+import { getInstance , registerInstance } from "./core/core.js";
+import PopupBox from "./components/popup-box.js";
 
 
 
@@ -14,8 +15,8 @@ let router = getInstance(Router);
 router.register('lists', HomeController, 'lists')
     .register('family', FamilyController )
     .register('ideas', HomeController, 'ideas')
-    .register('home', HomeController )
-    .manage();
+    .register('home', HomeController );
+
 
 
 
@@ -24,3 +25,11 @@ document.querySelectorAll('nav-bar').forEach(navbar => {
     navbar.onLinkClick = (href) => router.navigate(href);
 });
 
+
+
+let popupBox =document.createElement('popup-box');
+document.body.appendChild(popupBox)
+
+registerInstance(popupBox);
+
+router.manage();

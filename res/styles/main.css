@@ -470,12 +470,21 @@ popup-box {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.75);
+    background-color: rgba(0, 0, 0, 0.75);
     z-index: 3;
     padding: 32px;
+    visibility: hidden;
+    opacity: 0;
+    transition: .5s;
 }
 
-popup-box > .pbFrame {
+popup-box:state(visible) {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+popup-box>.pbFrame {
     position: relative;
     background-color: var(--white);
     padding: 42px;
@@ -485,8 +494,15 @@ popup-box > .pbFrame {
     margin: auto;
     max-height: 100%;
     display: flex;
+    transform: translateY(32px);
+    transition: .5s;
 }
-popup-box  .pbInside {
+
+popup-box:state(visible) >.pbFrame {
+    transform: translateY(0);
+}
+
+popup-box .pbInside {
     overflow-y: scroll;
     max-height: 100%;
     padding-right: 26px;
@@ -500,8 +516,9 @@ popup-box .close {
     height: 32px;
     display: block;
     cursor: pointer;
- opacity: .75;
+    opacity: .75;
 }
+
 popup-box .close:hover {
     opacity: 1;
 }
