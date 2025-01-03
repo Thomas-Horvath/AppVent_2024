@@ -26,7 +26,9 @@ document.querySelectorAll('nav-bar').forEach(navbar => {
     navbar.onLinkClick = (href) => router.navigate(href);
 });
 
-
+let navStack = document.querySelector('title-navstack');
+navStack.onChange = (path => router.navigate(path)); 
+registerInstance(navStack);
 
 let popupBox =document.createElement('popup-box');
 document.body.appendChild(popupBox)

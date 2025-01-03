@@ -1,9 +1,10 @@
+import TitleNavstack from "../components/title-navstack.js";
 import DiTarget from "./di-target.js";
 import Router from "./router.js";
 
 class MainView extends DiTarget {
 
-    static requires = { router: Router };
+    static requires = { router: Router, navStack: TitleNavstack };
 
     container = null;
 
@@ -29,7 +30,7 @@ class MainView extends DiTarget {
     click(selector, methode) {
         function elemClick(e) {
             e.preventDefault();
-            methode(e.currentTarget.dataset,e.currentTarget,e);
+            methode(e.currentTarget.dataset, e.currentTarget, e);
         }
         this.container.querySelectorAll(selector).forEach(elem => {
             elem.onclick = elemClick;
@@ -41,7 +42,13 @@ class MainView extends DiTarget {
         return `<section>${content}</section>`;
     }
 
-
+    title(title) {
+        if(title) {
+            this.navStack.next(title, this.router.getFullPath())
+        } else {
+            this.navStack.reset();
+        }
+    }
 
     content(model) {
         throw new Error("Method 'content' is not implemented")

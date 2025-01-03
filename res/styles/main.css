@@ -347,9 +347,11 @@ main .container>section {
 
 /** Title NavigationStack */
 
+
 title-navstack:state(title)>*[data-title] {
     max-width: 200px;
     opacity: 1;
+    z-index: 4;
 }
 
 title-navstack>*[data-title] {
@@ -362,6 +364,7 @@ title-navstack>*[data-title] {
 title-navstack *[data-nav] {
     transition: .5s;
     overflow-x: hidden;
+    cursor: pointer;
 }
 
 title-navstack:state(title) *[data-nav] {
@@ -461,7 +464,7 @@ aside li a span {
         height: 100%;
         max-width: 180px;
         background-image: none;
-        z-index: 1;
+        /* z-index: 1; */
         padding-top: 120px;
     }
 

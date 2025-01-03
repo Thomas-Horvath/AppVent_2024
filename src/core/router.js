@@ -33,17 +33,20 @@ class Router {
 
     manage() {
         let path = this.#getPath();
-        
+
         let registry = this.routes[path[0]];
         let controller = registry.controller
         let instance = getInstance(controller);
         instance[registry.action](path.length > 1 ? path[1] : undefined);
     }
-
-
-    #getPath() {
+    getFullPath() {
         let path = location.search || location.hash || location.pathname;
         path = path.substring(1);
+        return path;
+    }
+
+    #getPath() {
+        let path = this.getFullPath();
         if (!path || path === 'index.html') path = this.defaultPath;
         return path.split('/');
     }
