@@ -7,13 +7,13 @@ class SecondView extends MainView {
                              <a href="home">Vissza</a>
                              <br>
                              <br>
-                             <a href="" data-id="1" data-name="First">Custom Click</a>
-                             <a href="" data-id="2" data-name="Second">Custom Click</a>
-                             <a href="" data-id="3" data-name="Third">Custom Click</a>
+                             <a href="" data-id="1" data-name="First">PopUp</a>
+                             <a href="ideas" data-id="2" data-name="Second">Custom Click</a>
+                             <a href="ideas" data-id="3" data-name="Third">third view</a>
                              `);
     }
 
-    onCustomClick(method) {
+     onCustomClick(method) {
         this.click('a[href=""]', method);
     }
 }

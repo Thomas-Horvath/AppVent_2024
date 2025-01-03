@@ -1,5 +1,6 @@
 import "./components/nav-bar.js";
 import "./components/popup-box.js";
+import "./components/title-navstack.js";
 import Router from './core/router.js';
 import HomeController from './home/home-controller.js';
 import FamilyController from "./family/family-controller.js";

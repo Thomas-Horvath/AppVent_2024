@@ -4,10 +4,11 @@ import DiTarget from "../core/di-target.js";
 import HomeService from "./home-service.js";
 import HomeView from "./home-view.js";
 import SecondView from "./second-view.js";
+import ThirdView from "./third-view.js";
 
 
 class HomeController extends DiTarget {
-    static requires = { service: HomeService, view: HomeView, sview: SecondView , popup: PopupBox};
+    static requires = { service: HomeService, view: HomeView, sview: SecondView , tview: ThirdView ,popup: PopupBox };
 
 
 
@@ -24,7 +25,7 @@ class HomeController extends DiTarget {
             })
     }
     ideas() {
-        console.log('Home Ideas..');
+        this.tview.render();
     }
 
 

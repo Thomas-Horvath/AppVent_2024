@@ -132,7 +132,7 @@ header {
     padding-top: 32px;
 }
 
-header>div {
+header>* {
     flex-grow: 1;
     display: flex;
     align-items: center;
@@ -345,8 +345,46 @@ main .container>section {
     }
 }
 
+/** Title NavigationStack */
 
+title-navstack:state(title)>*[data-title] {
+    max-width: 200px;
+    opacity: 1;
+}
 
+title-navstack>*[data-title] {
+    overflow-x: hidden;
+    max-width: 0;
+    opacity: 0;
+    transition: .5s;
+}
+
+title-navstack *[data-nav] {
+    transition: .5s;
+    overflow-x: hidden;
+}
+
+title-navstack:state(title) *[data-nav] {
+    opacity: 0;
+}
+
+title-navstack *[data-nav] a {
+    color: var(--white);
+    margin-right: 8px;
+    font-size: 125%;
+    transform: translateY(2px);
+    display: inline-block;
+}
+
+title-navstack *[data-nav] span {
+    font-size: 105%;
+    font-family: 'title', sans-serif;
+    transition: .5s;
+    display: inline-block;
+}
+title-navstack:state(title) *[data-nav] span {
+    transform: translateX(128px);
+}
 
 
 /** aside menu  */
@@ -498,7 +536,7 @@ popup-box>.pbFrame {
     transition: .5s;
 }
 
-popup-box:state(visible) >.pbFrame {
+popup-box:state(visible)>.pbFrame {
     transform: translateY(0);
 }
 
