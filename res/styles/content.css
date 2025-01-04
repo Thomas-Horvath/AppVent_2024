@@ -1,0 +1,67 @@
+/** Colors and icons*/
+:root {
+    --family-icon1: "\f004";
+    --family-color1: #ffadad;
+}
+
+
+
+
+
+p {
+    margin: 16px 0;
+}
+
+
+ul.blocks {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 32px;
+}
+
+ul.blocks li {
+    background-color: #eee;
+    margin-bottom: 8px;
+    padding: 16px;
+    border-radius: 16px;
+    position: relative;
+}
+
+ul.blocks a.action {
+    position: absolute;
+    right: 16px;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 150%;
+    color: rgba(0, 0, 0, .15);
+}
+
+
+/** Family list*/
+
+ul.family li {
+    display: flex;
+    font-size: 110%;
+    color: rgba(0, 0, 0, .5);
+    font-weight: bold;
+    background-color: var(--family-color1);
+}
+
+ul.family .icon {
+    width: 32px;
+    text-align: center;
+    margin-right: 12px;
+    font-size: 125%;
+    line-height: 1;
+    opacity: .66 ;
+    transform: translateY(2px);
+}
+
+ul.family .icon::before {
+    font-weight: 900;
+    font-family: "Font Awesome 6 Free";
+    content: var(--family-icon1);
+
+}
