@@ -1,7 +1,24 @@
 /** Colors and icons*/
 :root {
+    --button-color: #f91234;
+    --big-lin-color: #c9e9cd;
+    --input-color: #f4f8f4;
     --family-icon1: "\f004";
+    --family-icon2: "\f0b1";
+    --family-icon3: "\f77d";
+    --family-icon4: "\f005";
+    --family-icon5: "\f433";
+    --family-icon6: "\f256";
+    --family-icon7: "\f8c0";
+    --family-icon8: "\e574";
     --family-color1: #ffadad;
+    --family-color2: #ffe1ad;
+    --family-color3: #feffad;
+    --family-color4: #b8ffad;
+    --family-color5: #adf3ff;
+    --family-color6: #adc4ff;
+    --family-color7: #d9adff;
+    --family-color8: #ffadea;
 }
 
 
@@ -12,6 +29,86 @@ p {
     margin: 16px 0;
 }
 
+
+/** Buttons and Links*/
+
+main section>a.new {
+    font-size: 250%;
+    color: var(--big-lin-color);
+    position: absolute;
+    top: 24px;
+    right: 40px;
+}
+
+button {
+    background-color: var(--button-color);
+    color: #fff;
+    padding:8px 16px;
+    border: 0;
+    border-radius: 8px;
+    font-size: 100%;
+    opacity: .75;
+    transition: .3s;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 1;
+}
+
+button:active {
+    background-color: #000;
+    transition: none;
+}
+
+button i {
+    margin-right: 4px;
+
+}
+
+
+/** Form*/
+
+form {
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+form>div {
+    margin-bottom: 16px;
+}
+
+form label {
+    display: block;
+}
+
+form input,
+form select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #e8e8e8;
+    background-color: var(--input-color);
+    text-align: center;
+    outline: none;
+}
+
+form input.small,
+form select.small {
+    max-width: 128px;
+}
+
+form input.medium,
+form select.medium {
+    max-width: 256px;
+}
+
+form input:focus,
+form select:focus {
+    outline: 1px solid #ddd;
+}
+
+/** Block list*/
 
 ul.blocks {
     list-style: none;
@@ -55,7 +152,7 @@ ul.family .icon {
     margin-right: 12px;
     font-size: 125%;
     line-height: 1;
-    opacity: .66 ;
+    opacity: .66;
     transform: translateY(2px);
 }
 
@@ -64,4 +161,60 @@ ul.family .icon::before {
     font-family: "Font Awesome 6 Free";
     content: var(--family-icon1);
 
+}
+
+ul.family .color2 {
+    background-color: var(--family-color2);
+}
+
+ul.family .color3 {
+    background-color: var(--family-color3);
+}
+
+ul.family .color4 {
+    background-color: var(--family-color4);
+}
+
+ul.family .color5 {
+    background-color: var(--family-color5);
+}
+
+ul.family .color6 {
+    background-color: var(--family-color6);
+}
+
+ul.family .color7 {
+    background-color: var(--family-color7);
+}
+
+ul.family .color8 {
+    background-color: var(--family-color8);
+}
+
+ul.family .icon2::before {
+    content: var(--family-icon2);
+}
+
+ul.family .icon3::before {
+    content: var(--family-icon3);
+}
+
+ul.family .icon4::before {
+    content: var(--family-icon4);
+}
+
+ul.family .icon5::before {
+    content: var(--family-icon5);
+}
+
+ul.family .icon6::before {
+    content: var(--family-icon6);
+}
+
+ul.family .icon7::before {
+    content: var(--family-icon7);
+}
+
+ul.family .icon8::before {
+    content: var(--family-icon8);
 }
