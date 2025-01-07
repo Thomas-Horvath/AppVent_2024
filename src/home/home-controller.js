@@ -13,9 +13,9 @@ class HomeController extends DiTarget {
 
 
     main() {
-        // this.view.title()
-        // let model = this.service.getData();
-        // this.view.render(model);
+        this.view.title()
+        let model = this.service.getData();
+        this.view.render(model);
     }
     lists(arg) {
         this.view.title('Home Lists')
