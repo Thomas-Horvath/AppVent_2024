@@ -28,7 +28,40 @@
 p {
     margin: 16px 0;
 }
+/** Message */
 
+.message {
+    padding: 16px;
+    background-color:#f8f8f8 ;
+    border: 1px solid rgba(0,0,0, .05);
+    border-radius: 8px;
+    display: flex;
+}
+.message::before {
+    font-weight: 900;
+    font-family: "Font Awesome 6 Free";
+    font-size: 150%;
+    content: "\f4ad";
+    margin-right: 16px;
+    color: rgba(0,0,0,.25);
+}
+.message p {
+    margin: 0;
+    color: rgba(0,0,0,.33);
+}
+
+.message strong {
+    display: block;
+    margin-bottom: 2px;
+    color: rgba(0,0,0, .5);
+}
+
+.message.warning {
+    background-color: #fff0ce;
+}
+.message.warning::before {
+    content: "\f071";
+}
 
 /** Buttons and Links*/
 

@@ -548,6 +548,7 @@ popup-box .pbInside {
     overflow-y: scroll;
     max-height: 100%;
     padding-right: 26px;
+    flex-grow: 1;
 }
 
 popup-box .close {
