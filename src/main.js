@@ -6,6 +6,7 @@ import HomeController from './home/home-controller.js';
 import FamilyController from "./family/family-controller.js";
 import { getInstance , registerInstance } from "./core/core.js";
 import PopupBox from "./components/popup-box.js";
+import IdeasController from "./ideas/ideas-controller.js";
 
 
 
@@ -15,7 +16,8 @@ let router = getInstance(Router);
 
 router.register('lists', HomeController, 'lists')
     .register('family', FamilyController )
-    .register('ideas', HomeController, 'ideas')
+    .register('ideas', IdeasController)
+    .register('idea', IdeasController , 'read')
     .register('home', HomeController );
 
 
